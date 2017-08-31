@@ -1,0 +1,38 @@
+PyCharm & Packages in Windows
+=
+- 下载pyCharm和python解释器并安装
+```$xslt
+pycharm-professional-2017.2.2
+python-3.6.2-amd64
+```
+
+- PyCharm的激活服务器地址：(2选1)
+```$xslt
+http://idea.imsxm.com/
+http://mcpmcc.com:1017 
+```
+
+- 安装依赖的包：
+```$xslt
+pip install pandas
+pip install numpy
+pip install scipy
+pip install sklearn
+```
+windows下安装scipy会失败，因为scipy依赖于numpy，而使用命令直接载下来的numpy中缺少mkl包，需要去手动下载
+
+http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy
+
+下的两个包分别是：（需要找对应python版本的包）
+```$xslt
+numpy-1.13.1+mkl-cp36-cp36m-win_amd64.whl
+scipy-0.19.1-cp36-cp36m-win_amd64.whl
+```
+- 导入 import
+    - 命令行输入py可以进入python命令模式，此时可以输入指令直接执行输出
+```$xslt
+>>> import pandas as pd
+>>> import numpy as np
+>>> from sklearn.preprocessing import scale
+>>> from sklearn.decomposition import PCA
+```
