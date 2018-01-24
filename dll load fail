@@ -1,0 +1,7 @@
+之前在安装numpy的时候，由于第一次使用
+```aidl
+pip install numpy
+```
+下载的numpy在windows下无法使用，因此下载了一个第三方的numpy-1.13.1+mkl-cp36-cp36m-win_amd64
+安装后却没有将之前的numpy卸载掉，导致系统中由两个numpy存在，因此导入失败
+将numpy卸载之后，重新安装第三方库，成功
