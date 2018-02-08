@@ -1,0 +1,24 @@
+###1 install 
+为了使用隐马尔科夫模型，需要下载hmmlearn库，先是使用pip下载，下载到的版本是0.20版。
+
+在执行`model.sample(n)`操作，使用模型来产生随机数时，出现deprecation警告，原因是，sample函数使用的sample_gaussian方法已经被废弃了，取而代之的是numpy.random.multivariate_normal，也就是直接下载的这个版本其实不能用，于是用pip uninstall卸载
+
+于是上github，搜索hmmlearn，找到他们正在维护的repo，git clone下来。
+
+执行自带example的时候发现出现错误：
+
+`ImportError: cannot import name '_hmmc'`
+
+上讨论区查看发现原因如下：
+
+rying to import hmmlearn from the repo root. To do this you need to manually compile the C extension first:
+
+```aidl
+$ python setup.py build_ext --inplace
+```
+Otherwise, recommend to install it via
+```
+$ pip install .
+```
+
+执行之后，成功安装hmmlearn 0.21版本，sample问题得以解决
